@@ -1,0 +1,45 @@
+
+@'
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+backend/.env
+frontend/.env
+
+# Large datasets
+data/
+datasets/
+*.csv
+*.zip
+
+# Build output
+dist/
+build/
+coverage/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+*.tmp
+*.bak
+
+# Editors and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local databases and exports
+*.sqlite
+*.sqlite3
+*.db
+*.sql.gz
+'@ | Set-Content -Path .gitignore -Encoding utf8

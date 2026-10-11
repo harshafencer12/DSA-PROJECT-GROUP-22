@@ -1,0 +1,29 @@
+RECOMGRAPH — DSA-3 Recommendation Engine v2
+
+1. Download MovieLens:
+   .\scripts\download-dataset.ps1
+
+2. Create MySQL database:
+   Get-Content .\database\schema.sql -Raw | mysql -u root -p
+
+3. Configure backend/.env from backend/.env.example.
+
+4. Backend:
+   cd backend
+   npm install
+   npm run import:catalog
+   npm run import:ratings
+   npm start
+
+5. Frontend in another terminal:
+   cd frontend
+   npm install
+   npm run dev
+
+Backend: http://localhost:5000
+Frontend: http://localhost:5173
+
+DSA flow:
+Hash Map / DB indexes -> Jaccard Similarity -> Dynamic Weighted Graph -> Binary Search -> Min Heap Top-K
+
+Movie catalogue is NOT hard-coded in JavaScript. It is imported into MySQL from MovieLens.
